@@ -1,0 +1,8 @@
+C:\Users\iguest\Documents\Visual Studio 2013\Projects\AzureCloudService1\ClassLibrary2\bin\Release\ClassLibrary2.dll
+C:\Users\iguest\Documents\Visual Studio 2013\Projects\AzureCloudService1\ClassLibrary2\bin\Release\ClassLibrary2.pdb
+C:\Users\iguest\Documents\Visual Studio 2013\Projects\AzureCloudService1\ClassLibrary2\bin\Release\HtmlAgilityPack.dll
+C:\Users\iguest\Documents\Visual Studio 2013\Projects\AzureCloudService1\ClassLibrary2\bin\Release\HtmlAgilityPack.pdb
+C:\Users\iguest\Documents\Visual Studio 2013\Projects\AzureCloudService1\ClassLibrary2\bin\Release\HtmlAgilityPack.xml
+C:\Users\iguest\Documents\Visual Studio 2013\Projects\AzureCloudService1\ClassLibrary2\obj\Release\ClassLibrary2.dll
+C:\Users\iguest\Documents\Visual Studio 2013\Projects\AzureCloudService1\ClassLibrary2\obj\Release\ClassLibrary2.pdb
+C:\Users\iguest\Documents\Visual Studio 2013\Projects\AzureCloudService1\ClassLibrary2\obj\Release\ClassLibrary2.csprojResolveAssemblyReference.cache

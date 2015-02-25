@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+</head>
+<body onload="initialize()">
+    <button type="button" onclick="startCrawling()">Start</button>
+    <button type="button" onclick="stopCrawling()">Stop</button>
+    <div id="jsonDiv2"></div>
+    <form>
+        <input type="text" id="input" onkeyup="testJson()" />
+    </form>
+    <div id="jsonDiv"></div>
+    <div id="status"></div>
+    <div id="index"></div>
+    <div id="urlCount"></div>
+    <div id="error"></div>
+
+    <script>
+        function initialize() {
+            $.ajax({
+                type: "POST",
+                url: "WebService1.asmx/initializeCloud",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    var t = "<p>" + data.d + "</p>";
+                    //$("#jsonDiv").html(t);
+                },
+                error: function (data) {
+                    //Console.log(data.d);
+                },
+                complete: function (data) {
+                    getStatus();
+                    getIndex();
+                    getURLNum();
+                }
+            });
+        }
+
+        function getErrorsList() {
+            $.ajax({
+                type: "POST",
+                url: "WebService1.asmx/Errors",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    var t = "<p>Errors found: " + data.d + "</p>";
+                    $("#error").html(t);
+                },
+                error: function (data) {
+                    $("#jsonDiv").html(data.d);
+                }
+            });
+        }
+
+        function getStatus() {
+            $.ajax({
+                type: "POST",
+                url: "WebService1.asmx/statusMessage",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    var t = "<p>Crawler status: " + data.d + "</p>";
+                    $("#jsonDiv2").html(t);
+                },
+                error: function (data) {
+                    //Console.log(data.d);
+                }
+            });
+        }
+
+        function getIndex() {
+            $.ajax({
+                type: "POST",
+                url: "WebService1.asmx/GetIndexCount",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    var t = "<p>Number of index crawled: " + data.d + "</p>";
+                    $("#index").html(t);
+                },
+                error: function (data) {
+                    //Console.log(data.d);
+                }
+            });
+        }
+
+        function getURLNum() {
+            $.ajax({
+                type: "POST",
+                url: "WebService1.asmx/GetURLsCrawledNum",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    var t = "<p>Total URLs crawled: " + data.d + "</p>";
+                    $("#urlCount").html(t);
+                },
+                error: function (data) {
+                    //Console.log(data.d);
+                }
+            });
+        }
+
+        function testJson() {
+				var input = { input: $("#input").val().trim() };
+				$.ajax({
+					type: "POST",
+					url: "WebService1.asmx/GetTitle",
+					data: JSON.stringify(input),
+					contentType: "application/json; charset=utf-8",
+					dataType: "json",
+					success: function (data) {
+						var t = "<p>" + data.d + "</p>";
+						$("#jsonDiv").html(t);
+					},
+					error: function (data) {
+						$("#jsonDiv").html(data.d);
+					}
+			});
+			}
+			function startCrawling() {
+			    $.ajax({
+			        type: "POST",
+			        url: "WebService1.asmx/start",
+			        data: "{}",
+			        contentType: "application/json; charset=utf-8",
+			        dataType: "json",
+			        success: function (data) {
+			            var t = "<p>" + data.d + "</p>";
+			            //$("#jsonDiv2").html(t);
+			        },
+			        error: function (data) {
+			            //Console.log(data.d);
+			        },
+			        complete: function (data) {
+			            getStatus();
+			        }
+			    });
+			}
+
+			function stopCrawling() {
+			    $.ajax({
+			        type: "POST",
+			        url: "WebService1.asmx/ClearEverything",
+			        data: "{}",
+			        contentType: "application/json; charset=utf-8",
+			        dataType: "json",
+			        success: function (data) {
+			            var t = "<p>" + data.d + "</p>";
+			            //$("#jsonDiv2").html(t);
+			        },
+			        error: function (data) {
+			            //Console.log(data.d);
+			        },
+			        complete: function (data) {
+			            getStatus();
+			        }
+			    });
+			}
+    </script>
+</body>
+</html>
+
+

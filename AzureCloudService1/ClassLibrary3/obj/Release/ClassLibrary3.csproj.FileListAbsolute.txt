@@ -1,0 +1,7 @@
+C:\Users\iguest\Documents\Visual Studio 2013\Projects\AzureCloudService1\ClassLibrary3\bin\Release\ClassLibrary3.dll
+C:\Users\iguest\Documents\Visual Studio 2013\Projects\AzureCloudService1\ClassLibrary3\bin\Release\ClassLibrary3.pdb
+C:\Users\iguest\Documents\Visual Studio 2013\Projects\AzureCloudService1\ClassLibrary3\bin\Release\HtmlAgilityPack.dll
+C:\Users\iguest\Documents\Visual Studio 2013\Projects\AzureCloudService1\ClassLibrary3\bin\Release\HtmlAgilityPack.pdb
+C:\Users\iguest\Documents\Visual Studio 2013\Projects\AzureCloudService1\ClassLibrary3\bin\Release\HtmlAgilityPack.xml
+C:\Users\iguest\Documents\Visual Studio 2013\Projects\AzureCloudService1\ClassLibrary3\obj\Release\ClassLibrary3.dll
+C:\Users\iguest\Documents\Visual Studio 2013\Projects\AzureCloudService1\ClassLibrary3\obj\Release\ClassLibrary3.pdb
